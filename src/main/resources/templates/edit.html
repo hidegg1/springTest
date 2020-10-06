@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/edit.css}" href="/css/edit.css">
+    <link href="https://fonts.googleapis.com/css?family=Caveat" rel="stylesheet">
+    <title>詳細画面</title>
+</head>
+<body>
+    <div class="one">
+        <table border="1" style="border-collapse: collapse; border-color: black">
+            <tr>
+                <th>ID</th>
+                <th>商品名</th>
+                <th>値段</th>
+            </tr>
+            <tr th:object="${orders}" th:if ="${ordersEntity}">
+                <!-- <td>[[*{id}]]</td> -->
+                <td>[[*{product_name}]]</td>
+                <td>[[*{price}]]</td>
+                <td><a th:href="@{/edit(produtId = *{id})}" ><button>詳細</button></a></td>
+            </tr>
+        </table>   
+    </div>
+        
+</body>
+</html>

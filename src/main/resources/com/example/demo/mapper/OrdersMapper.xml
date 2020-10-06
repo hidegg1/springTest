@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo.mapper.OrdersMapper">
+    <select id="selectAll" resultType="com.example.demo.entity.OrdersEntity">
+        SELECT * FROM orders;
+    </select>
+    <select id="findOne" resultType="com.example.demo.entity.OrdersEntity">
+    	SELECT * FROM orders where id= #{id}
+ 	</select>
+ 	
+ 	<!-- <update id="update">
+    	update book_management_tbl set title='${booksForm.title}',author='${booksForm.author}', isbn='${booksForm.isbn}',bookscount='${booksForm.bookscount}',versionnumber='${booksForm.versionnumber}',note='${booksForm.note}'where id= ${booksForm.bookid}
+  	</update> -->
+</mapper>

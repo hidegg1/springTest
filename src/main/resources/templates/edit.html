@@ -16,7 +16,7 @@
                 <th>値段</th>
             </tr>
             <tr th:object="${orders}" th:if ="${ordersEntity}">
-                <!-- <td>[[*{id}]]</td> -->
+                <td>[[*{id}]]</td>
                 <td>[[*{product_name}]]</td>
                 <td>[[*{price}]]</td>
                 <td><a th:href="@{/edit(produtId = *{id})}" ><button>詳細</button></a></td>

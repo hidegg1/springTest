@@ -9,6 +9,12 @@
     <select id="findOne" resultType="com.example.demo.entity.OrdersEntity">
     	SELECT * FROM orders where id= #{id}
  	</select>
+ 	<select id="delete" resultType="com.example.demo.entity.OrdersEntity">
+     delete from orders where id = #{id}
+   </select>
+   <insert id="save" useGeneratedKeys="true" keyProperty="id">
+     insert into orders (id, product_name, price) values (#{id}, #{product_name}, #{price})
+   </insert>
  	
  	<!-- <update id="update">
     	update book_management_tbl set title='${booksForm.title}',author='${booksForm.author}', isbn='${booksForm.isbn}',bookscount='${booksForm.bookscount}',versionnumber='${booksForm.versionnumber}',note='${booksForm.note}'where id= ${booksForm.bookid}

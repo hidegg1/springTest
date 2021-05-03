@@ -1,20 +1,10 @@
-package com.example.demo.entity;
+package com.example.demo.form;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
 
-@Entity
-@Table(name="orders")
-public class OrdersEntity {
+public class ProductForm {
 	
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	
-//	@Column(name = "product_name")
 	private String product_name;
 	
 	private int price;
@@ -28,7 +18,6 @@ public class OrdersEntity {
 	}
 
 
-	
 	public String getProduct_name() {
 		return product_name;
 	}
@@ -44,5 +33,9 @@ public class OrdersEntity {
 	public void setPrice(int price) {
 		this.price = price;
 	}
+	
+	
+	
+	
 
 }

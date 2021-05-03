@@ -5,9 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" th:href="@{/css/edit.css}" href="/css/edit.css">
     <link href="https://fonts.googleapis.com/css?family=Caveat" rel="stylesheet">
-    <title>詳細画面</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script type="text/javascript" src="JS/test1.js"></script>
+   <title>詳細画面</title>
 </head>
 <body>
+	<form>
     <div class="one">
         <table border="1" style="border-collapse: collapse; border-color: black">
             <tr>
@@ -15,14 +18,31 @@
                 <th>商品名</th>
                 <th>値段</th>
             </tr>
-            <tr th:object="${orders}" th:if ="${ordersEntity}">
+            <tr th:if ="${ordersEntity}" th:object="${ordersEntity}">
                 <td>[[*{id}]]</td>
                 <td>[[*{product_name}]]</td>
                 <td>[[*{price}]]</td>
-                <td><a th:href="@{/edit(produtId = *{id})}" ><button>詳細</button></a></td>
+                <td><input type="submit" formaction="/edit/delete" value="削除" method="POST" onClick="return Check()" class="delete">
+                	<input type="hidden"  name="productId" th:value="*{id}" >
+                </td>
             </tr>
         </table>   
     </div>
-        
+    </form>
+    <!-- 消すのかどうかのアラート -->
+	<script>
+	<!--trueの時だけreturnして、onClickのところに飛ぶ条件分岐-->
+	function Check(){
+		/* return confirm("削除してよろしいですか"); */
+	
+	    let checked = confirm("削除してよろしいですか");
+	    if (checked == true) {
+	        return true;
+	    } else {
+	        return false;
+	    }
+	}
+	
+	</script>
 </body>
 </html>

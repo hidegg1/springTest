@@ -21,7 +21,10 @@
                 <td>[[*{price}]]</td>
                 <td><a th:href="@{/edit(productId = *{id})}" ><button>詳細</button></a></td>
             </tr>
-        </table>   
+        </table>
+        <form action="/insertForm">
+        	<input type="submit" value="新規登録" class="insert" >
+        </form>   
     </div>
 </body>
 </html>
